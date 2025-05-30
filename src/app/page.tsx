@@ -1,18 +1,29 @@
-// src/app/page.tsx
+"use client";
+import { useState } from "react";
 import { RecipeCard } from "@/components/RecipeCard";
+import { RecipeDetailModal } from "@/components/RecipeDetailModal";
 import { recipes } from "@/data/recipes";
 
-export default function Home() {
+export default function RecipesListPage() {
+  const [selectedRecipeId, setSelectedRecipeId] = useState<string | null>(null);
+  console.log("selectedRecipeId", selectedRecipeId);
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-extrabold text-center text-gray-900 mb-10">
-        Delicious Recipes Await!
-      </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <>
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 py-8">
         {recipes.map((recipe) => (
-          <RecipeCard key={recipe.id} recipe={recipe} />
+          <RecipeCard
+            key={recipe.id}
+            recipe={recipe}
+            onClick={() => setSelectedRecipeId(recipe.id)}
+          />
         ))}
       </div>
-    </div>
+      {selectedRecipeId && (
+        <RecipeDetailModal
+          recipeId={selectedRecipeId}
+          onClose={() => setSelectedRecipeId(null)}
+        />
+      )}
+    </>
   );
 }

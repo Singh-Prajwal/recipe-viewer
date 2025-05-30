@@ -1,5 +1,3 @@
-// src/lib/utils.ts
-// Helper functions for localStorage to track paid recipes
 export const getPaidRecipes = (): string[] => {
   if (typeof window === "undefined") return []; // Server-side check
   const paidRecipes = localStorage.getItem("paidRecipes");

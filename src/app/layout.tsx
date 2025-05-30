@@ -1,4 +1,3 @@
-// src/app/layout.tsx
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Link from "next/link";
@@ -32,7 +31,6 @@ export default function RootLayout({
                   Home
                 </Link>
               </li>
-              {/* Add more nav items here if needed */}
             </ul>
           </nav>
         </header>

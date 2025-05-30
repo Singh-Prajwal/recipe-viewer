@@ -1,4 +1,3 @@
-// src/app/api/create-checkout-session/route.ts
 import { NextResponse } from "next/server";
 import { stripe } from "@/lib/stripe";
 import { recipes } from "@/data/recipes";
@@ -39,9 +38,8 @@ export async function POST(req: Request) {
         },
       ],
       mode: "payment",
-      // Pass recipeId back to success page
       success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/recipes/success?session_id={CHECKOUT_SESSION_ID}&recipe_id=${recipe.id}`,
-      cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/recipes/${recipe.id}`,
+      cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/recipes/cancel`,
       metadata: {
         recipeId: recipe.id,
       },

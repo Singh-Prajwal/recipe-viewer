@@ -1,22 +1,18 @@
-// src/types/index.ts (create this file for interfaces)
 export interface Recipe {
   id: string;
   name: string;
-  image: string; // Path to image in public folder
+  image: string;
   shortDescription: string;
   ingredients: string[];
   steps: string[];
-  priceInCents: number; // Price in cents for Stripe
+  priceInCents: number;
 }
-
-// src/data/recipes.ts
-import { Recipe } from "@/types";
 
 export const recipes: Recipe[] = [
   {
     id: "pasta-carbonara",
     name: "Classic Pasta Carbonara",
-    image: "/food1.jpg", // Adjust the path to your image in the public folder
+    image: "/food1.jpg",
     shortDescription:
       "A quick and delicious Italian classic with eggs, cheese, pancetta, and black pepper.",
     ingredients: [
@@ -35,13 +31,12 @@ export const recipes: Recipe[] = [
       "Quickly pour the egg mixture over the pasta, stirring vigorously to emulsify. Add a splash of reserved pasta water as needed to create a creamy sauce. The heat from the pasta will cook the eggs without scrambling them.",
       "Stir in the cooked pancetta. Serve immediately with extra Pecorino Romano and black pepper.",
     ],
-    priceInCents: 999, // $9.99
+    priceInCents: 999,
   },
   {
     id: "chicken-tikka-masala",
     name: "Homemade Chicken Tikka Masala",
     image: "/food2.jpg",
-    // "https://media.istockphoto.com/id/1127522508/photo/chicken-fillet-marinated-in-yoghurt-and-fried-in-tandoor-chiken-tikka-in-kadai-dish.jpg?s=1024x1024&w=is&k=20&c=7-Ww0W7mTBeyGOmE4zzh5yeuSfi5sFUjJuzViHTmuYw=",
     shortDescription:
       "Tender chicken pieces simmered in a rich, creamy, and aromatic tomato-based sauce.",
     ingredients: [
@@ -58,13 +53,12 @@ export const recipes: Recipe[] = [
       "Combine: Stir in the cooked chicken. Reduce heat to low, stir in heavy cream, and simmer for 5 minutes, allowing flavors to meld. Do not boil after adding cream.",
       "Garnish: Garnish with fresh cilantro before serving with rice or naan.",
     ],
-    priceInCents: 1499, // $14.99
+    priceInCents: 1499,
   },
   {
     id: "vegetable-stir-fry",
     name: "Quick Vegetable Stir-Fry",
     image: "/food3.jpg",
-    // "https://media.istockphoto.com/id/928823336/photo/grilled-chicken-breast-fried-chicken-fillet-and-fresh-vegetable-salad-of-tomatoes-cucumbers.jpg?s=1024x1024&w=is&k=20&c=MRmsj1qzqAKakantY-lqn_f8FrdWont_ZYhBysHIfDA=",
     shortDescription:
       "A vibrant and healthy stir-fry with a variety of vegetables and a savory sauce.",
     ingredients: [
@@ -85,6 +79,6 @@ export const recipes: Recipe[] = [
       "Add sauce: Give the sauce mixture a quick whisk again and pour it into the wok. Stir constantly for 1-2 minutes until the sauce thickens and coats the vegetables.",
       "Serve immediately: Serve hot with steamed rice or noodles.",
     ],
-    priceInCents: 799, // $7.99
+    priceInCents: 799,
   },
 ];
