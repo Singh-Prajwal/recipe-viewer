@@ -1,5 +1,4 @@
-// src/app/recipes/[id]/page.tsx
-"use client"; // This page is a client component
+"use client";
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
@@ -7,9 +6,8 @@ import { useRouter } from "next/navigation";
 import { loadStripe } from "@stripe/stripe-js";
 import { recipes } from "@/data/recipes";
 import { getPaidRecipes, addPaidRecipe } from "../../../lib/utlis";
-import { Recipe } from "@/types"; // Import Recipe interface
+import { Recipe } from "@/types";
 
-// Make sure to call loadStripe outside of a component’s render to avoid recreating the Stripe object on every render.
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!
 );
